@@ -1,0 +1,66 @@
+.lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 1s ease, opacity 1s ease;
+  transform-origin: top center;
+  z-index: 3; 
+  cursor: pointer;
+}
+
+.lid.open {
+  transform: rotateX(100deg);
+  opacity: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  height: 100vh;           
+  margin: 0;             
+  background: #f8f8f8;       
+}
+
+.chocolate-box {
+  position: relative;
+  width: 500px;
+}
+
+.box {
+  width: 100%;
+  display: block;
+}
+
+.chocolates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr);    
+  gap: 35px; 
+  position: absolute;
+  top: 15%;   
+  left: 15%;  
+  width: 70%; 
+  height: 70%;
+}
+
+.chocolates img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.chocolates img:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
